@@ -1,4 +1,5 @@
 #Hydraulic module
+import math*
 
 def force_pascal(pressure, area):
     """Calculate pressure given pressure and area"""
@@ -31,7 +32,7 @@ def horsepower_motor2(torque, speed):
 
 def torque_motor(displacement, pressure):
     """Calculate torque given displacement and pressure"""
-    return (displacement * pressure)/6.28
+    return (displacement * pressure))/6.28
     
 def cylinder_velocity(stroke, time):
     """Calculate cylinder velocity given stroke and time"""
@@ -40,6 +41,23 @@ def cylinder_velocity(stroke, time):
 def flow_velocity(velocity, area):
     """Calculate flow given velocity and area"""
     return (velocity*area)/231
+
+def bore_area(diameter):
+    """Calculate cylinder bore area given diameter"""
+    return diameter * diameter * .7854
+
+def flow_valve(cv, pressure_drop, specific_gravity):
+    """Calculate valve flow rating given cv coefficient, pressure drop and specific gravity"""
+    Return cv * math.sqrt(pressure_drop/specific_gravity)
+
+def velocity_conductor(flow, area):
+    """Calculate fluid velocity in a conductor given flow and area"""
+    return (flow * .3208)/area
+
+def burst_pressure(working_press, sf):
+    """Calculate burst pressure given working pressure and safety factor"""
+    return working_press * sf
+    
 
 
 
