@@ -7,7 +7,7 @@ def force_pascal(pressure, area):
 
 def pressure_pascal(area, force):
     """Calculate pressure given area and force"""
-    return force/pressure
+    return force / area
 
 def area_pascal(pressure, force):
     """Calculate area given pressure and force"""
